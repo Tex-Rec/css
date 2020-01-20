@@ -1,2 +1,223 @@
 # css for Embed Player @ Hearthis
+@charset "utf-8";
+/* CSS Document */
+/* -- HEARTHIS CSS FRO TEX-REC */
+
+
+
+.fullwidth ul.playlist li {
+	            margin: 0px;
+	        }
+	        
+	        .timing,
+            .time {
+                display: none !important;
+            }
+	        
+	        
+	        .set_embed {
+	            position: fixed;
+	            z-index: 1;
+	            bottom: 0px;
+	            left: 0px;
+	            right: 0px;
+	            top: 0px;
+	            height: 100%;
+	            width: 100%;
+	            
+	        }
+	        
+	        #set-table {
+	            width: 100%;
+	            height: auto;
+	            margin: 0 0;
+	            border-top: 1px solid #dddddd;
+	            overflow-x: hidden;
+	            overflow-y: auto;
+	            position: absolute;
+	            z-index: 0;
+	            bottom: 0px;
+	            left: 0px;
+	            right: 0px;
+	            top: 140px;
+	        }
+	        
+	        #set-table table {
+	            width: 100%;
+	            border: 0px solid #dddddd;
+            	margin: 0;
+            	border-radius: 0px;
+	        }
+	                
+	                
+	        #set-table .infobits span {
+	            display: inline-block;
+	            margin-right: 5px;
+	        }
+	     
+	        #set-table .current {
+	            background: rgba(37,-54,83,0.5);
+	            color: #fff !important;
+	        }  
+	        
+	        #set-table .current a {
+	            color: #fff !important;
+	        }
+	        
+	        #set-table .infobits {
+	            float: right;
+	        }
+	        
+	        
+	        ::-webkit-scrollbar {
+	            width: 6px;
+	            background: transparent;
+	        }
+	         
+	        ::-webkit-scrollbar-track {
+	            margin: 0;
+	        }
+	         
+	        ::-webkit-scrollbar-thumb {
+	            background: #999; 
+	            border-radius: 3px;
+	        }
+	        
+	        ::-webkit-scrollbar-thumb:window-inactive {
+	        	background: #999; 
+	        }
+	        
+	        
+	        .fancybox-inner {
+	        	overflow: visible !important;
+	        }
+	        
+			        
+			.fancybox-wrap {
+				  width: 100% !important;
+				  height: 100% !important;
+				  position: fixed !important;
+				  top: 0px !important;
+				  left: 0px !important;
+				  overflow: visible !important;
+				  right: 0px !important;
+				  bottom: 0px !important;
+				  border-radius: 0px !important;
+			}
+			
+			.fancybox-skin {
+			
+			  width: 100% !important;
+			  height: 100% !important;
+			  box-shadow: none !important;
+			  webkit-box-shadow: none !important;
+				border-radius: 0;
+				background: rgba(255,255,255,0.95);
+			}
+			
+			.fancybox-inner {
+			
+			  width: 100% !important;
+			  height: 100% !important;
+			  text-align: center !important;
+			}
+			
+			.fancybox-close {
+					top: 5px;
+					right: 5px;
+			
+			}
+			
+			.fancybox-overlay {
+				background: transparent;
+			}
+			
+			canvas {
+			    cursor: default;
+			}
+			
+			ul.playlist li .cover {
+			    border-radius: 4px;
+			}
+			
+			
+	                    html {
+	                        height: 100%;
+	                    }
+	                    body {
+	                        background: #000;
+	                        height: 100%;
+	                        
+	                    }
+	                    
+	                    ul.playlist li.black .player-link span, ul.playlist li.black .headline, ul.playlist li.black .headline a, ul.playlist li.black .headline span {
+						    color: #fff !important;
+						}
+						
+						ul.playlist li.black canvas {
+						    color: #ffffff;
+						}
+	                    
+	                    body:after {
+						  content: " ";
+						  position: fixed;
+						  left: 0px;
+						  top: 0px;
+						  right: 0px;
+						  bottom: 0px;
+						  z-index: 0;
+						 
+						  opacity: 0.7;
+						  -webkit-transition: all 1s;
+			              background: #000 url(https://images.hearthis.at/c/r/o/_/uploads/12410/image_set_bg/134177/w800_h800_btrue_c000000_q50_m1579526691----cropped_1579369815604.jpg) center center no-repeat;
+			              background-position: center !important;
+						  background-size: cover !important;
+	                    }
+	                    
+	                    body {
+	                    	background: #000 !important;
+	                    }
+	                    
+	                    #set-table {
+	                    	border-top: 1px solid rgba(255,255,255,0.3);
+	                    	padding-top: 5px;
+	                    }
+	                    
+	                    #set-table:after {
+						  content: " ";
+						  position: fixed;
+						  left: 0px;
+						  top: 141px;
+						  right: 5px;
+						  bottom: 0px;
+						  z-index: -1;
+						 
+						  opacity: 0.3;
+						  -webkit-transition: all 1s;
+			              background: #000;
+	                    }
+	                    
+	                    #set-table table {
+	                    	background: transparent;
+	                    }
+	                    
+	                    table tbody tr td {
+						    padding: 0;
+						}
+	                    
+	                    #set-table table a {
+	                    	color: #fff;
+	                    	padding: 9px 10px;
+	                    	display: block;
+	                    }
+	                    
+	                    table tbody tr:nth-child(even) {
+						    background: rgba(0,0,0,0.1);
+						}
+
+
+
+
+
+
 custom style sheet
