@@ -375,6 +375,7 @@ ul.playlist li.black .player-link, ul.playlist li.black.sm2_playing, ul.playlist
 	top: 205px;
 	border-radius: 20px 20px 0 0;
 	/*visibility: hidden;*/
+	background-color: rgba(0, 0, 0, 0);
 }
 
 #set-table:after {
@@ -385,9 +386,10 @@ ul.playlist li.black .player-link, ul.playlist li.black.sm2_playing, ul.playlist
 	right: 5px;
 	bottom: 0px;
 	z-index: -1;
-	opacity: 0.3;
+	opacity: 0.12;
 	-webkit-transition: all 1s;
-	background: rgba(0, 0, 0, 0);
+	background: url(https://globaldjsguide.com/wp-content/uploads/2018/10/synthesizer-2427768_1920-e1549744359424.jpg) center / cover no-repeat fixed border-box padding-box;
+	/*visibility: hidden;*/
 }
 
 #set-table table {
@@ -395,7 +397,7 @@ ul.playlist li.black .player-link, ul.playlist li.black.sm2_playing, ul.playlist
 	border: 0px solid #DDDDDD;
 	margin: 0;
 	border-radius: 0px;
-	background: transparent;
+	background: rgba(13, 13, 13, 0.582);
 }
 
 #set-table .infobits span {
