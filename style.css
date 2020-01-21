@@ -1,53 +1,680 @@
-# css for Embed Player @ Hearthis
-@charset "utf-8";
-/* CSS Document */
+/**/
 /* -- HEARTHIS CSS FRO TEX-REC */
+/**/
+/**/
+/*player-fulwidth*/
+/**/
+.fullwidth ul.playlist li.half canvas, ul.playlist.top li canvas {
+	height: 50px;
+	top: 50px;
+	opacity: 0;
+}
 
+.fullwidth ul.playlist li canvas.rendered, ul.playlist.top li canvas.rendered {
+	opacity: 1;
+}
 
+.fullwidth ul.playlist li.sm2_playing.half canvas.rendered, .fullwidth ul.playlist li.sm2_paused.half canvas.rendered, ul.playlist.top li canvas.rendered, ul.playlist li.highlight canvas.rendered {
+	opacity: 1;
+}
 
+.fullwidth ul.playlist li.with-image, ul.playlist.top li.with-image {
+	margin-left: 140px;
+}
+
+.fullwidth ul.playlist li .infobits {
+	right: 0px;
+}
+
+ul.playlist li .functions {
+	position: absolute;
+	display: block;
+	bottom: 22px;
+	left: 3px;
+	opacity: 1;
+	font-size: 12px;
+	padding-top: 0;
+}
+
+ul.playlist li {
+	display: block;
+	width: auto;
+	color: #FFF;
+	text-decoration: none;
+	position: relative;
+}
+
+ul.playlist li canvas {
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+	background-color: rgba(55, 55, 55, 0);
+}
+
+@media only screen and (max-width: 980px) {
+	.fullwidth ul.playlist li {
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.fullwidth ul.playlist li {
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+	
+	.fullwidth ul.playlist li .infobits {
+		right: 0px;
+	}
+	
+	.fullwidth ul.playlist li .functions {
+		left: 0px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.fullwidth ul.playlist li.with-image {
+		margin-left: 95px !important;
+	}
+	
+	ul.playlist li.with-image::before, ul.playlist li.with-image .cover, ul.playlist li.with-image::after {
+		display: block !important;
+		width: 80px;
+		height: 80px;
+		left: -90px !important;
+	}
+}
+
+ul.playlist li .note {
+	padding: 0px 10px 0px 10px;
+	box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+#global_content .fullwidth .highlight {
+	margin-bottom: 36px;
+	top: 3px;
+}
+
+#global_content .fullwidth .highlight:before {
+	content: " ";
+	position: absolute;
+	left: -130px;
+	top: -15px;
+	right: -20px;
+	bottom: -15px;
+	z-index: 0;
+	background-position: center !important;
+	background-size: cover !important;
+	opacity: 1;
+	background: #000;
+}
+
+#global_content .fullwidth .highlight:after {
+	content: " ";
+	position: absolute;
+	left: -130px;
+	top: -15px;
+	right: -20px;
+	bottom: -15px;
+	z-index: 0;
+	background-position: center !important;
+	background-size: cover !important;
+	opacity: 0.7;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+}
+
+.track-detail-header ul.playlist {
+	padding: 0px 25px !important;
+}
+
+.track-detail-header ul.playlist li {
+	margin-left: 0px !important;
+}
+
+.track-detail-header ul.playlist li .dna_container {
+	height: 5px !important;
+	top: 300px;
+}
+
+.track-detail-header ul.playlist li canvas {
+	height: 50px;
+	top: 250px;
+}
+
+.track-detail-header ul.playlist li .infobits {
+	display: none;
+}
+
+.track-detail-header ul.playlist li .time, .track-detail-header ul.playlist li .timing {
+	top: 275px;
+	right: 10px;
+}
+
+.track-detail-header ul.playlist li .headline i.text-right {
+	right: 0px;
+}
+
+.track-detail-header ul.playlist li .cover {
+	left: 0px;
+}
+
+.track-detail-header ul.playlist li .player-link {
+	left: 125px;
+	width: 45px;
+	height: 45px;
+}
+
+.track-detail-header ul.playlist li .player-link i {
+	left: 14px;
+	top: 13px;
+}
+
+.track-detail-header ul.playlist li .player-link i.fa-play {
+	left: 16px;
+	top: 13px;
+}
+
+.track-detail-header ul.playlist li .headline {
+	left: 190px;
+	top: -6px;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+.track-detail-header.with-image ul.playlist li, .track-detail-header:after {
+	-webkit-transition: opacity 2s;
+	transition: opacity 2s;
+}
+
+.track-detail-header.with-image ul.playlist li.sm2_playing {
+	opacity: 0.3;
+}
+
+.track-detail-header.with-image:hover ul.playlist li {
+	opacity: 1 !important;
+}
+
+.track-detail-header.with-image.playing:after {
+	opacity: 1;
+}
+
+.track-detail-header.with-image.playing:hover:after {
+	opacity: 0.7 !important;
+}
+
+/**/
+/*Extra CODES*/
+/**/
+ul.playlist li .headline span {
+	display: inline-block;
+	text-decoration: none;
+	color: #888;
+	outline: none;
+	font-size: 13px;
+	font-weight: 400;
+	padding-right: 5px;
+	line-height: 16px;
+	width: 100%;
+	font-family: 'Open Sans', Helvetica, Arial, serif;
+	font-weight: 400;
+}
+
+ul.playlist li.black .player-link span, ul.playlist li.black .headline, ul.playlist li.black .headline a, ul.playlist li.black .headline span {
+	color: #FFF;
+}
+
+ul.playlist li.black .headline .roof, ul.playlist li.black .headline .roof a, ul.playlist li.black .headline .roof span {
+	color: #DDD !important;
+	font-size: 13px;
+}
+
+ul.playlist li.black .player-link, ul.playlist li.black.sm2_playing, ul.playlist li.black.sm2_paused, ul.playlist li.black.sm2_playing .player-link {
+	color: #FFFFFF;
+	border-color: rgba(255, 255, 255, 0.901);
+	background: 0 0 rgba(255, 255, 255, 0) !important;
+}
+
+.player-link {
+	margin: 10px 0 0 10px;
+}
+
+/**/
+/**/
+/**/
+/**/
 .fullwidth ul.playlist li {
-	            margin: 0px;
-	        }
-	        
-	        .timing,
-            .time {
-                display: none !important;
-            }
-	        
-	        
-	        .set_embed {
-	            position: fixed;
-	            z-index: 1;
-	            bottom: 0px;
-	            left: 0px;
-	            right: 0px;
-	            top: 0px;
-	            height: 100%;
-	            width: 100%;
-	            
-	        }
-	        
-	        #set-table {
-	            width: 100%;
-	            height: auto;
-	            margin: 0 0;
-	            border-top: 1px solid #dddddd;
-	            overflow-x: hidden;
-	            overflow-y: auto;
-	            position: absolute;
-	            z-index: 0;
-	            bottom: 0px;
-	            left: 0px;
-	            right: 0px;
-	            top: 140px;
-	        }
-	        
-	        #set-table table {
-	            width: 100%;
-	            border: 0px solid #dddddd;
-            	margin: 0;
-            	border-radius: 0px;
-	        }
+	margin: 20px;
+}
+
+.timing, .time {
+	display: none !important;
+}
+
+.set_embed {
+	position: fixed;
+	z-index: 1;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+/*TABLE*/
+.fullwidth {
+	margin: 0;
+	width: 100%;
+	height: auto;
+}
+
+#set-table {
+	width: 100%;
+	height: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+	z-index: 0;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	top: 250px;
+	border-top: 1px solid #595959;
+	padding-top: 1px;
+	letter-spacing: 0.5px;
+}
+
+#set-table:after {
+	content: " ";
+	position: fixed;
+	left: 0px;
+	top: 141px;
+	right: 5px;
+	bottom: 0px;
+	z-index: -1;
+	opacity: 0.3;
+	-webkit-transition: all 1s;
+	background: rgba(0, 0, 0, 0);
+}
+
+#set-table table {
+	width: 100%;
+	border: 0px solid #DDDDDD;
+	margin: 0;
+	border-radius: 0px;
+	background: transparent;
+}
+
+#set-table .infobits span {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+#set-table .current {
+	background: rgba(79, 36, 160, 0.625);
+	color: #FFF !important;
+}
+
+#set-table .current a {
+	color: #FFF !important;
+}
+
+#set-table .infobits {
+	float: right;
+}
+
+table tbody tr td {
+	padding: 0 0 2px 0;
+}
+
+#set-table table a {
+	color: #FFFFFF;
+	padding: 9px 10px;
+	display: block;
+}
+
+table tbody tr:nth-child(even) {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+/**/
+::-webkit-scrollbar {
+	width: 6px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-track {
+	margin: 0;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #999;
+	border-radius: 3px;
+}
+
+.fancybox-inner {
+	overflow: visible !important;
+}
+
+.fancybox-wrap {
+	width: 100% !important;
+	height: 100% !important;
+	position: fixed !important;
+	top: 0px !important;
+	left: 0px !important;
+	overflow: visible !important;
+	right: 0px !important;
+	bottom: 0px !important;
+	border-radius: 0px !important;
+}
+
+.fancybox-skin {
+	width: 100% !important;
+	height: 100% !important;
+	box-shadow: none !important;
+	box-shadow: none !important;
+	border-radius: 0;
+	background: rgba(255, 255, 255, 0.95);
+}
+
+.fancybox-inner {
+	width: 100% !important;
+	height: 100% !important;
+	text-align: center !important;
+}
+
+.fancybox-close {
+	top: 5px;
+	right: 5px;
+}
+
+.fancybox-overlay {
+	background: transparent;
+}
+
+canvas {
+	cursor: default;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: rgba(0, 0, 0, 0);
+	height: 100%;
+}
+
+ul.playlist li.black .player-link span, ul.playlist li.black .headline, ul.playlist li.black .headline a, ul.playlist li.black .headline span {
+	color: #FFFFFF !important;
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+ul.playlist li.black canvas {
+	color: #FFFFFF;
+}
+
+body:after {
+	content: " ";
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 0;
+	opacity: 0.7;
+	-webkit-transition: all 1s;
+	background: #000 url(https://images.hearthis.at/c/r/o/_/uploads/12410/image_set_bg/134177/w800_h800_btrue_c000000_q50_m1579526691----cropped_1579369815604.jpg) center center no-repeat;
+	background-position: center !important;
+	background-size: cover !important;
+}
+
+body {
+	background: #000 !important;
+}
+
+/**/
+/*PLAYER CODES*/
+ul.playlist li .headline {
+	display: block;
+	text-decoration: none;
+	color: #000;
+	outline: none;
+	position: absolute;
+	z-index: 212;
+	font-size: 18px;
+	font-weight: 700;
+	left: 50px;
+	top: -5px;
+	right: 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-family: 'Open Sans', Helvetica, Arial, serif;
+	font-weight: 400;
+	line-height: 29px;
+	margin: -10px 0 0 20px;
+}
+
+.fa {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+}
+
+ul.playlist li.black .player-link i {
+	color: #FFF !important;
+}
+
+ul.playlist li .player-link i.fa-play, ul.playlist li.sm2_paused .player-link i.fa-play {
+	display: block !important;
+}
+
+ul.playlist li .controls .statusbar {
+	position: relative;
+	height: 90px;
+	overflow: hidden;
+	cursor: pointer;
+	z-index: 1;
+	background: rgba(5, 0, 17, 0);
+}
+
+ul.playlist li:hover .controls .statusbar {
+	position: relative;
+	cursor: ew-resize;
+}
+
+ul.playlist li .player-link {
+	display: block;
+	text-decoration: none;
+	color: #333;
+	outline: none;
+	position: absolute;
+	z-index: 10;
+	font-size: 16px;
+	font-weight: 700;
+	-webkit-transition: all .2s;
+	transition: all 0.2s;
+	width: 38px;
+	height: 38px;
+	border: 2px solid rgba(239, 183, 178, 0);
+	border-radius: 50%;
+	padding: 0;
+}
+
+ul.playlist li .player-link i {
+	-webkit-transition: all .5s;
+	transition: all 0.5s;
+}
+
+ul.playlist li .player-link:hover {
+	background: rgba(44, 44, 68, 0.388) !important;
+}
+
+ul.playlist li.sm2_playing .player-link, ul.playlist li.sm2_paused .player-link {
+	background: rgba(202, 22, 6, 0) !important;
+}
+
+ul.playlist li .cover {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -130px;
+	width: 140px;
+	height: 140px;
+	z-index: 1;
+	border-radius: 20px;
+	/*+box-shadow: 2px 5px 10px 3px #121212;*/
+	-moz-box-shadow: 2px 5px 10px 3px #121212;
+	-webkit-box-shadow: 2px 5px 10px 3px #121212;
+	box-shadow: 2px 5px 10px 3px #121212;
+	border: 1px solid rgba(64, 64, 64, 0.267);
+}
+
+.fullwidth ul.playlist li .functions {
+	left: 0;
+}
+
+ul.playlist li:hover canvas, ul.playlist li:hover .functions, ul.playlist li:hover .time, ul.playlist li:hover .infobits, ul.playlist li:hover .dna_container {
+	opacity: 1 !important;
+}
+
+ul.playlist li.sm2_playing .functions, ul.playlist li.sm2_paused .functions {
+	opacity: 1;
+}
+
+ul.playlist li .functions {
+	/*top: 124px;*/
+	font-size: 15px;
+	color: #DBDBDB;
+	padding: 10px 12px;
+	border-radius: 8px;
+}
+
+ul.playlist li .infobits {
+	position: absolute;
+	display: block;
+	top: 110px;
+	right: 5px;
+	z-index: 20;
+	color: #616161;
+	font-size: 11px;
+}
+
+ul.playlist li:hover canvas, ul.playlist li:hover .functions, ul.playlist li:hover .time, ul.playlist li:hover .infobits, ul.playlist li:hover .dna_container {
+	opacity: 1 !important;
+}
+
+ul.playlist li.sm2_playing .infobits, ul.playlist li.sm2_paused .infobits {
+	top: 124px;
+	font-size: 15px;
+	color: #000000;
+	top: 124px;
+	font-size: 15px;
+	color: #000000;
+	background: rgba(255, 255, 255, 0.427);
+	padding: 10px 12px;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.427);
+	padding: 10px 12px;
+	border-radius: 8px;
+}
+
+.spacer {
+	margin: 20px 0 0;
+}
+
+.controls {
+	margin: 0 0 20px 0;
+}
+
+.functions {
+	margin-bottom: -10px;
+	margin-left: 25px;
+	font-size: 15px;
+	color: #000000;
+	top: ;
+	font-size: 15px;
+	color: #000000;
+	padding: 10px 12px;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.427);
+	padding: 10px 12px;
+	border-radius: 8px;
+	float: right;
+}
+
+/**/
+ul.playlist.top li .functions, ul.playlist li.highlight .functions {
+	opacity: 1;
+}
+
+ul.playlist li .functions span, ul.playlist li .functions a {
+	display: inline-block;
+	padding: 0 7px;
+	border-radius: 0;
+	font-size: 11px !important;
+	vertical-align: middle;
+	z-index: 200;
+	cursor: pointer;
+	color: #CCCCCC;
+	outline: 0px;
+	text-decoration: none;
+	border: 0;
+	border-radius: 3px;
+	border: 1px solid #C7C7C7;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	transition: all 0.2s;
+	line-height: 20px;
+}
+
+ul.playlist li .functions span:hover, ul.playlist li .functions a:hover {
+	border: 1px solid #D0D0D0;
+	color: #555;
+}
+
+ul.playlist li .functions span:active {
+	border: 1px solid #767676;
+}
+
+ul.playlist li .functions .active {
+	background: 0 0 !important;
+	border: 1px solid transparent;
+}
+
+.playlist {
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.246);
+	border-radius: 15px;
+}
+
+/**/
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+	margin: 0 0 8px 0;
+	padding: 0;
+	font-size: 15px;
+	direction: ltr;
+}
+
 	                
 	                
 	        #set-table .infobits span {
