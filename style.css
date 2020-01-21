@@ -2,6 +2,97 @@
 /* -- HEARTHIS CSS FRO TEX-REC */
 /**/
 /**/
+::-webkit-scrollbar {
+	width: 6px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-track {
+	margin: 0;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #999;
+	border-radius: 3px;
+}
+
+.fancybox-inner {
+	overflow: visible !important;
+}
+
+.fancybox-wrap {
+	width: 100% !important;
+	height: 100% !important;
+	position: fixed !important;
+	top: 0px !important;
+	left: 0px !important;
+	overflow: visible !important;
+	right: 0px !important;
+	bottom: 0px !important;
+	border-radius: 0px !important;
+}
+
+.fancybox-skin {
+	width: 100% !important;
+	height: 100% !important;
+	box-shadow: none !important;
+	box-shadow: none !important;
+	border-radius: 0;
+	background: rgba(255, 255, 255, 0.95);
+}
+
+.fancybox-inner {
+	width: 100% !important;
+	height: 100% !important;
+	text-align: center !important;
+}
+
+.fancybox-close {
+	top: 5px;
+	right: 5px;
+}
+
+.fancybox-overlay {
+	background: transparent;
+}
+
+canvas {
+	cursor: default;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: rgba(0, 0, 0, 0);
+	height: 100%;
+}
+
+ul.playlist li.black canvas {
+	color: #FFFFFF;
+}
+
+body:after {
+	content: " ";
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 0;
+	opacity: 0.7;
+	-webkit-transition: all 1s;
+	background: #000 url(https://images.hearthis.at/c/r/o/_/uploads/12410/image_set_bg/134177/w800_h800_btrue_c000000_q50_m1579526691----cropped_1579369815604.jpg) center center no-repeat;
+	background-position: center !important;
+	background-size: cover !important;
+}
+
+body {
+	background: #000 !important;
+}
+
+/**/
 /*player-fulwidth*/
 /**/
 .fullwidth ul.playlist li.half canvas, ul.playlist.top li canvas {
@@ -16,10 +107,6 @@
 
 .fullwidth ul.playlist li.sm2_playing.half canvas.rendered, .fullwidth ul.playlist li.sm2_paused.half canvas.rendered, ul.playlist.top li canvas.rendered, ul.playlist li.highlight canvas.rendered {
 	opacity: 1;
-}
-
-.fullwidth ul.playlist li.with-image, ul.playlist.top li.with-image {
-	margin-left: 140px;
 }
 
 .fullwidth ul.playlist li .infobits {
@@ -40,7 +127,7 @@ ul.playlist li {
 	display: block;
 	width: auto;
 	color: #FFF;
-	text-decoration: none;
+	text-decoration: none rgba(0, 0, 0, 0);
 	position: relative;
 }
 
@@ -256,15 +343,15 @@ ul.playlist li.black .player-link, ul.playlist li.black.sm2_playing, ul.playlist
 }
 
 .set_embed {
-	position: fixed;
+	position: absolute;
 	z-index: 1;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	top: 0;
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+	display: block;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 /*TABLE*/
@@ -272,6 +359,7 @@ ul.playlist li.black .player-link, ul.playlist li.black.sm2_playing, ul.playlist
 	margin: 0;
 	width: 100%;
 	height: auto;
+	position: absolute;
 }
 
 #set-table {
@@ -279,22 +367,21 @@ ul.playlist li.black .player-link, ul.playlist li.black.sm2_playing, ul.playlist
 	height: auto;
 	overflow-x: hidden;
 	overflow-y: auto;
-	position: relative;
-	z-index: 0;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	top: 250px;
-	border-top: 1px solid #595959;
-	padding-top: 1px;
+	position: absolute;
+	z-index: 1;
+	border-top: 1px solid #646464;
+	padding-top: 0px;
 	letter-spacing: 0.5px;
+	top: 205px;
+	border-radius: 20px 20px 0 0;
+	/*visibility: hidden;*/
 }
 
 #set-table:after {
 	content: " ";
-	position: fixed;
+	position: absolute;
 	left: 0px;
-	top: 141px;
+	top: 0;
 	right: 5px;
 	bottom: 0px;
 	z-index: -1;
@@ -318,11 +405,29 @@ ul.playlist li.black .player-link, ul.playlist li.black.sm2_playing, ul.playlist
 
 #set-table .current {
 	background: rgba(79, 36, 160, 0.625);
-	color: #FFF !important;
+	color: #FFFFFF !important;
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
+}
+
+#set-table .current:hover {
+	background: rgba(31, 22, 47, 0.625);
+	color: #FFFFFF !important;
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
 }
 
 #set-table .current a {
-	color: #FFF !important;
+	color: #FFFFFF !important;
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
+}
+
+#set-table .current a:hover {
+	background: rgba(31, 22, 47, 0.625);
+	color: #FFFFFF !important;
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
 }
 
 #set-table .infobits {
@@ -331,113 +436,22 @@ ul.playlist li.black .player-link, ul.playlist li.black.sm2_playing, ul.playlist
 
 table tbody tr td {
 	padding: 0 0 2px 0;
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
 }
 
 #set-table table a {
 	color: #FFFFFF;
 	padding: 9px 10px;
 	display: block;
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
 }
 
 table tbody tr:nth-child(even) {
-	background: rgba(0, 0, 0, 0.1);
-}
-
-/**/
-::-webkit-scrollbar {
-	width: 6px;
-	background: transparent;
-}
-
-::-webkit-scrollbar-track {
-	margin: 0;
-}
-
-::-webkit-scrollbar-thumb {
-	background: #999;
-	border-radius: 3px;
-}
-
-.fancybox-inner {
-	overflow: visible !important;
-}
-
-.fancybox-wrap {
-	width: 100% !important;
-	height: 100% !important;
-	position: fixed !important;
-	top: 0px !important;
-	left: 0px !important;
-	overflow: visible !important;
-	right: 0px !important;
-	bottom: 0px !important;
-	border-radius: 0px !important;
-}
-
-.fancybox-skin {
-	width: 100% !important;
-	height: 100% !important;
-	box-shadow: none !important;
-	box-shadow: none !important;
-	border-radius: 0;
-	background: rgba(255, 255, 255, 0.95);
-}
-
-.fancybox-inner {
-	width: 100% !important;
-	height: 100% !important;
-	text-align: center !important;
-}
-
-.fancybox-close {
-	top: 5px;
-	right: 5px;
-}
-
-.fancybox-overlay {
-	background: transparent;
-}
-
-canvas {
-	cursor: default;
-}
-
-html {
-	height: 100%;
-}
-
-body {
-	background: rgba(0, 0, 0, 0);
-	height: 100%;
-}
-
-ul.playlist li.black .player-link span, ul.playlist li.black .headline, ul.playlist li.black .headline a, ul.playlist li.black .headline span {
-	color: #FFFFFF !important;
-	font-size: 20px;
-	letter-spacing: 1px;
-}
-
-ul.playlist li.black canvas {
-	color: #FFFFFF;
-}
-
-body:after {
-	content: " ";
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	z-index: 0;
-	opacity: 0.7;
-	-webkit-transition: all 1s;
-	background: #000 url(https://images.hearthis.at/c/r/o/_/uploads/12410/image_set_bg/134177/w800_h800_btrue_c000000_q50_m1579526691----cropped_1579369815604.jpg) center center no-repeat;
-	background-position: center !important;
-	background-size: cover !important;
-}
-
-body {
-	background: #000 !important;
+	background: rgba(0, 0, 0, 0.172);
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
 }
 
 /**/
@@ -463,12 +477,19 @@ ul.playlist li .headline {
 	margin: -10px 0 0 20px;
 }
 
+ul.playlist li.black .player-link span, ul.playlist li.black .headline, ul.playlist li.black .headline a, ul.playlist li.black .headline span {
+	color: #FFFFFF !important;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.888);
+}
+
 .fa {
 	display: inline-block;
 	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1;
+	line-height: 0.9;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	margin: 0;
@@ -484,11 +505,13 @@ ul.playlist li .player-link i.fa-play, ul.playlist li.sm2_paused .player-link i.
 
 ul.playlist li .controls .statusbar {
 	position: relative;
-	height: 90px;
+	height: 60px;
 	overflow: hidden;
 	cursor: pointer;
 	z-index: 1;
 	background: rgba(5, 0, 17, 0);
+	margin: -26px 0 0;
+	border-bottom: 1px solid rgba(242, 242, 242, 0.448);
 }
 
 ul.playlist li:hover .controls .statusbar {
@@ -496,12 +519,19 @@ ul.playlist li:hover .controls .statusbar {
 	cursor: ew-resize;
 }
 
+ul.playlist li .controls .statusbar .position, ul.playlist li .controls .statusbar .loading, ul.playlist li .controls .statusbar .annotation {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 0.5em;
+}
+
 ul.playlist li .player-link {
 	display: block;
 	text-decoration: none;
 	color: #333;
 	outline: none;
-	position: absolute;
+	position: relative;
 	z-index: 10;
 	font-size: 16px;
 	font-weight: 700;
@@ -511,7 +541,7 @@ ul.playlist li .player-link {
 	height: 38px;
 	border: 2px solid rgba(239, 183, 178, 0);
 	border-radius: 50%;
-	padding: 0;
+	margin: 0 0 0 13px;
 }
 
 ul.playlist li .player-link i {
@@ -520,7 +550,7 @@ ul.playlist li .player-link i {
 }
 
 ul.playlist li .player-link:hover {
-	background: rgba(44, 44, 68, 0.388) !important;
+	background: #000000 !important;
 }
 
 ul.playlist li.sm2_playing .player-link, ul.playlist li.sm2_paused .player-link {
@@ -530,10 +560,10 @@ ul.playlist li.sm2_playing .player-link, ul.playlist li.sm2_paused .player-link 
 ul.playlist li .cover {
 	display: block;
 	position: absolute;
-	top: 0;
-	left: -130px;
-	width: 140px;
-	height: 140px;
+	top: -5px;
+	left: -160px;
+	width: 160px;
+	height: 160px;
 	z-index: 1;
 	border-radius: 20px;
 	/*+box-shadow: 2px 5px 10px 3px #121212;*/
@@ -541,6 +571,8 @@ ul.playlist li .cover {
 	-webkit-box-shadow: 2px 5px 10px 3px #121212;
 	box-shadow: 2px 5px 10px 3px #121212;
 	border: 1px solid rgba(64, 64, 64, 0.267);
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
 }
 
 .fullwidth ul.playlist li .functions {
@@ -555,6 +587,56 @@ ul.playlist li.sm2_playing .functions, ul.playlist li.sm2_paused .functions {
 	opacity: 1;
 }
 
+ul.playlist li .infobits {
+	position: absolute;
+	display: block;
+	top: 110px;
+	right: 5px;
+	z-index: 20;
+	color: #888;
+	font-size: 11px;
+}
+
+ul.playlist li.black .infobits {
+	color: #FFFFFF;
+}
+
+ul.playlist li .infobits span {
+	display: inline-block;
+	margin-right: 8px;
+}
+
+ul.playlist li .functions i, ul.playlist li .infobits i {
+	font-size: 11px;
+}
+
+ul.playlist li .infobits i {
+	margin-right: 5px;
+	font-size: 11px;
+}
+
+.fullwidth ul.playlist li.with-image, ul.playlist.top li.with-image {
+	margin-left: 165px;
+	margin-right: 9px;
+}
+
+a:hover {
+	color: #666;
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
+	background: rgba(31, 22, 47, 0.625);
+	color: #FFFFFF !important;
+}
+
+a:focus {
+	color: #666;
+	background: rgba(57, 50, 70, 0.539);
+	color: #FFFFFF !important;
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
+}
+
+/**/
 ul.playlist li .functions {
 	/*top: 124px;*/
 	font-size: 15px;
@@ -563,35 +645,33 @@ ul.playlist li .functions {
 	border-radius: 8px;
 }
 
+/**/
 ul.playlist li .infobits {
-	position: absolute;
-	display: block;
-	top: 110px;
-	right: 5px;
-	z-index: 20;
-	color: #616161;
-	font-size: 11px;
+	color: #2A2A2A;
+	top: 118px;
+	background: rgba(255, 255, 255, 0.483);
+	font-size: 16px;
+	font-weight: 500;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.328);
+	padding: 10px 19px 12px;
+	border-radius: 10px;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.448);
+	/*+box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.194);*/
+	-moz-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.194);
+	-webkit-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.194);
+	box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.194);
+	height: 40px;
 }
 
-ul.playlist li:hover canvas, ul.playlist li:hover .functions, ul.playlist li:hover .time, ul.playlist li:hover .infobits, ul.playlist li:hover .dna_container {
-	opacity: 1 !important;
+ul.playlist li.black .infobits {
+	color: #262626;
 }
 
 ul.playlist li.sm2_playing .infobits, ul.playlist li.sm2_paused .infobits {
-	top: 124px;
-	font-size: 15px;
-	color: #000000;
-	top: 124px;
-	font-size: 15px;
-	color: #000000;
-	background: rgba(255, 255, 255, 0.427);
-	padding: 10px 12px;
-	border-radius: 8px;
-	background: rgba(255, 255, 255, 0.427);
-	padding: 10px 12px;
-	border-radius: 8px;
+	top: 118px;
 }
 
+/**/
 .spacer {
 	margin: 20px 0 0;
 }
@@ -601,19 +681,10 @@ ul.playlist li.sm2_playing .infobits, ul.playlist li.sm2_paused .infobits {
 }
 
 .functions {
-	margin-bottom: -10px;
-	margin-left: 25px;
-	font-size: 15px;
-	color: #000000;
-	top: ;
-	font-size: 15px;
-	color: #000000;
-	padding: 10px 12px;
-	border-radius: 8px;
-	background: rgba(255, 255, 255, 0.427);
-	padding: 10px 12px;
+	margin-bottom: -19px;
 	border-radius: 8px;
 	float: right;
+	height: 40px;
 }
 
 /**/
@@ -623,13 +694,11 @@ ul.playlist.top li .functions, ul.playlist li.highlight .functions {
 
 ul.playlist li .functions span, ul.playlist li .functions a {
 	display: inline-block;
-	padding: 0 7px;
 	border-radius: 0;
 	font-size: 11px !important;
 	vertical-align: middle;
 	z-index: 200;
 	cursor: pointer;
-	color: #CCCCCC;
 	outline: 0px;
 	text-decoration: none;
 	border: 0;
@@ -642,12 +711,52 @@ ul.playlist li .functions span, ul.playlist li .functions a {
 }
 
 ul.playlist li .functions span:hover, ul.playlist li .functions a:hover {
-	border: 1px solid #D0D0D0;
-	color: #555;
+	/*border: 1px solid #D0D0D0;*/
+	color: #D1D1D1;
+	background-color: #2C2C2C;
 }
 
 ul.playlist li .functions span:active {
 	border: 1px solid #767676;
+}
+
+ul.playlist li.black .functions span:hover, ul.playlist li.black .functions a:hover {
+	border: 1px solid rgba(174, 174, 174, 0.800);
+	/*+box-shadow: 1px 2px 5px 1px rgba(60, 60, 60, 0.888);*/
+	-moz-box-shadow: 1px 2px 5px 1px rgba(60, 60, 60, 0.888);
+	-webkit-box-shadow: 1px 2px 5px 1px rgba(60, 60, 60, 0.888);
+	box-shadow: 1px 2px 5px 1px rgba(60, 60, 60, 0.888);
+	color: rgba(22, 22, 22, 0.737);
+	background: rgba(204, 204, 204, 0.668);
+}
+
+ul.playlist li.black .functions span, ul.playlist li.black .functions a {
+	-webkit-transition: all .6s;
+	transition: all 0.7s;
+	color: #2F2F2F;
+	background: rgba(255, 255, 255, 0.668);
+	font-size: 16px;
+	font-weight: 500;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.328);
+	border-radius: 10px;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.448);
+	/*+box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.194);*/
+	-moz-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.194);
+	-webkit-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.194);
+	box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.194);
+	line-height: 3;
+	letter-spacing: 1.4px;
+	color: #282828;
+	margin: 0 10px 0 0;
+	border: 1px solid rgba(72, 72, 72, 0.800);
+	/*+box-shadow: 1px 2px 5px 1px rgba(18, 18, 18, 0.888);*/
+	-moz-box-shadow: 1px 2px 5px 1px rgba(18, 18, 18, 0.888);
+	-webkit-box-shadow: 1px 2px 5px 1px rgba(18, 18, 18, 0.888);
+	box-shadow: 1px 2px 5px 1px rgba(18, 18, 18, 0.888);
+	color: rgba(255, 255, 255, 0.737);
+	background: rgba(25, 25, 25, 0.668);
+	text-transform: uppercase;
+	padding: 2px 12px;
 }
 
 ul.playlist li .functions .active {
@@ -655,19 +764,45 @@ ul.playlist li .functions .active {
 	border: 1px solid transparent;
 }
 
-.playlist {
-	margin: 0;
-	background-color: rgba(0, 0, 0, 0.246);
-	border-radius: 15px;
+ul.playlist li .functions .active a {
+	background: 0 0 !important;
+	border: 1px solid transparent;
+	border: 1px solid rgba(174, 174, 174, 0.800);
+	/*+box-shadow: 1px 2px 5px 1px rgba(60, 60, 60, 0.888);*/
+	-moz-box-shadow: 1px 2px 5px 1px rgba(60, 60, 60, 0.888);
+	-webkit-box-shadow: 1px 2px 5px 1px rgba(60, 60, 60, 0.888);
+	box-shadow: 1px 2px 5px 1px rgba(60, 60, 60, 0.888);
+	color: rgba(22, 22, 22, 0.737);
+	background: rgba(204, 204, 204, 0.668);
 }
 
 /**/
-*, *:before, *:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+.playlist {
+	margin: 0;
+	background-color: rgba(112, 43, 229, 0.405);
+	border-radius: 15px;
 }
 
+ul.playlist {
+	list-style-type: none;
+	margin: 0;
+	padding: 1px 10px 6px;
+	position: relative;
+	width: 100%;
+	z-index: 0;
+	border: 1px solid rgba(53, 47, 155, 0.487);
+	/*+box-shadow: 0 5px 5px 1px rgba(21, 21, 21, 0.198);*/
+	-moz-box-shadow: 0 5px 5px 1px rgba(21, 21, 21, 0.198);
+	-webkit-box-shadow: 0 5px 5px 1px rgba(21, 21, 21, 0.198);
+	box-shadow: 0 5px 5px 1px rgba(21, 21, 21, 0.198);
+}
+
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
 	margin: 0 0 8px 0;
 	padding: 0;
@@ -675,174 +810,22 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockqu
 	direction: ltr;
 }
 
-	                
-	                
-	        #set-table .infobits span {
-	            display: inline-block;
-	            margin-right: 5px;
-	        }
-	     
-	        #set-table .current {
-	            background: rgba(37,-54,83,0.5);
-	            color: #fff !important;
-	        }  
-	        
-	        #set-table .current a {
-	            color: #fff !important;
-	        }
-	        
-	        #set-table .infobits {
-	            float: right;
-	        }
-	        
-	        
-	        ::-webkit-scrollbar {
-	            width: 6px;
-	            background: transparent;
-	        }
-	         
-	        ::-webkit-scrollbar-track {
-	            margin: 0;
-	        }
-	         
-	        ::-webkit-scrollbar-thumb {
-	            background: #999; 
-	            border-radius: 3px;
-	        }
-	        
-	        ::-webkit-scrollbar-thumb:window-inactive {
-	        	background: #999; 
-	        }
-	        
-	        
-	        .fancybox-inner {
-	        	overflow: visible !important;
-	        }
-	        
-			        
-			.fancybox-wrap {
-				  width: 100% !important;
-				  height: 100% !important;
-				  position: fixed !important;
-				  top: 0px !important;
-				  left: 0px !important;
-				  overflow: visible !important;
-				  right: 0px !important;
-				  bottom: 0px !important;
-				  border-radius: 0px !important;
-			}
-			
-			.fancybox-skin {
-			
-			  width: 100% !important;
-			  height: 100% !important;
-			  box-shadow: none !important;
-			  webkit-box-shadow: none !important;
-				border-radius: 0;
-				background: rgba(255,255,255,0.95);
-			}
-			
-			.fancybox-inner {
-			
-			  width: 100% !important;
-			  height: 100% !important;
-			  text-align: center !important;
-			}
-			
-			.fancybox-close {
-					top: 5px;
-					right: 5px;
-			
-			}
-			
-			.fancybox-overlay {
-				background: transparent;
-			}
-			
-			canvas {
-			    cursor: default;
-			}
-			
-			ul.playlist li .cover {
-			    border-radius: 4px;
-			}
-			
-			
-	                    html {
-	                        height: 100%;
-	                    }
-	                    body {
-	                        background: #000;
-	                        height: 100%;
-	                        
-	                    }
-	                    
-	                    ul.playlist li.black .player-link span, ul.playlist li.black .headline, ul.playlist li.black .headline a, ul.playlist li.black .headline span {
-						    color: #fff !important;
-						}
-						
-						ul.playlist li.black canvas {
-						    color: #ffffff;
-						}
-	                    
-	                    body:after {
-						  content: " ";
-						  position: fixed;
-						  left: 0px;
-						  top: 0px;
-						  right: 0px;
-						  bottom: 0px;
-						  z-index: 0;
-						 
-						  opacity: 0.7;
-						  -webkit-transition: all 1s;
-			              background: #000 url(https://images.hearthis.at/c/r/o/_/uploads/12410/image_set_bg/134177/w800_h800_btrue_c000000_q50_m1579526691----cropped_1579369815604.jpg) center center no-repeat;
-			              background-position: center !important;
-						  background-size: cover !important;
-	                    }
-	                    
-	                    body {
-	                    	background: #000 !important;
-	                    }
-	                    
-	                    #set-table {
-	                    	border-top: 1px solid rgba(255,255,255,0.3);
-	                    	padding-top: 5px;
-	                    }
-	                    
-	                    #set-table:after {
-						  content: " ";
-						  position: fixed;
-						  left: 0px;
-						  top: 141px;
-						  right: 5px;
-						  bottom: 0px;
-						  z-index: -1;
-						 
-						  opacity: 0.3;
-						  -webkit-transition: all 1s;
-			              background: #000;
-	                    }
-	                    
-	                    #set-table table {
-	                    	background: transparent;
-	                    }
-	                    
-	                    table tbody tr td {
-						    padding: 0;
-						}
-	                    
-	                    #set-table table a {
-	                    	color: #fff;
-	                    	padding: 9px 10px;
-	                    	display: block;
-	                    }
-	                    
-	                    table tbody tr:nth-child(even) {
-						    background: rgba(0,0,0,0.1);
-						}
+body {
+	background: rgba(0, 0, 0, 0.444) !important;
+}
 
-
-
-
-
+body:after {
+	content: " ";
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 0;
+	opacity: 0.7;
+	-webkit-transition: all 1s;
+	background: #000 url(https://images.hearthis.at/c/r/o/_/uploads/12410/image_set_bg/134177/w800_h800_btrue_c000000_q50_m1579526691----cropped_1579369815604.jpg) center center no-repeat;
+	background-position: center !important;
+	background-size: cover !important;
+	/*visibility: hidden;*/
+}
